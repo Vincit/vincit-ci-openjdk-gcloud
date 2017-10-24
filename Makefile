@@ -1,12 +1,12 @@
 NAME = vincit/circleci-openjdk-gcloud
-VERSION = 9-jdk
+VERSION = 8-jdk
 
 .PHONY: all build push
 
 build:
 	docker build --no-cache -t $(NAME):$(VERSION) .
 
-push:
+push: build
 	docker push $(NAME):$(VERSION)
 
 all: build
