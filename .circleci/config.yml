@@ -6,7 +6,8 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: make push
+      - run: make build
+      - run: curl -X POST $DOCKERHUB_TRIGGER_URL
 workflows:
   version: 2
   commit:
