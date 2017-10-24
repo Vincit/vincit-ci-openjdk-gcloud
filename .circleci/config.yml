@@ -9,6 +9,9 @@ jobs:
       - run: make push
 workflows:
   version: 2
+  commit:
+    jobs:
+      - push
   nightly:
     triggers:
       - schedule:
@@ -17,5 +20,5 @@ workflows:
             branches:
               only:
                 - master
-  jobs:
-    - push
+    jobs:
+      - push
