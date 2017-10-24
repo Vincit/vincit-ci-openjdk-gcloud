@@ -1,12 +1,9 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/python:latest
+    machine: true
     steps:
       - checkout
-      - setup_remote_docker
-      - run: make build
       - run: curl -X POST $DOCKERHUB_TRIGGER_URL
 workflows:
   version: 2
