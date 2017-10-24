@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    - run: make build
+  push:
+    - run: make push
+
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+  jobs:
+    - build
+    - push
