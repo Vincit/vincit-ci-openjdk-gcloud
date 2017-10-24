@@ -1,9 +1,10 @@
 version: 2
 jobs:
-  push:
-    machine:
-      - image: circleci/classic:latest
+  build:
+    docker:
+      - image: circleci/python:latest
     steps:
+      - checkout
       - setup_remote_docker
       - run: make push
 workflows:
@@ -11,10 +12,10 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only:
-                - master
+        cron: "0 0 * * *"
+        filters:
+          branches:
+            only:
+              - master
   jobs:
     - push
