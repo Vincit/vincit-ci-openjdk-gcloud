@@ -1,7 +1,5 @@
 version: 2
 jobs:
-  build:
-    - run: make build
   push:
     - run: make push
 
@@ -16,5 +14,4 @@ workflows:
               only:
                 - master
   jobs:
-    - build
     - push
