@@ -7,6 +7,6 @@ build:
 	docker build --no-cache -t $(NAME):$(VERSION) .
 
 push:
-	docker push
+	docker push $(NAME):$(VERSION)
 
 all: build
