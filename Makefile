@@ -4,7 +4,7 @@ VERSION = 8-jdk
 .PHONY: all build push
 
 build:
-	docker build --no-cache -t $(NAME):$(VERSION) -t $(NAME):latest .
+	docker build --no-cache -t $(NAME):$(VERSION) .
 	docker tag $(NAME):$(VERSION) $(NAME):latest
 
 push: build
