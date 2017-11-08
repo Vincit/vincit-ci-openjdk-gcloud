@@ -1,4 +1,4 @@
-NAME = vincit/circleci-openjdk-gcloud
+NAME = vincit/vincit-ci-openjdk-gcloud
 VERSION = 8-jdk
 
 .PHONY: all build push
