@@ -2,6 +2,9 @@ FROM circleci/openjdk:8-jdk
 
 MAINTAINER aleksi.hakli@vincit.com
 
+RUN sudo groupadd -g 999 docker
+RUN sudo usermod -a -G docker circleci
+
 ARG KONTEMPLATE_TAG=v1.3.0
 ARG KONTEMPLATE_BIN=kontemplate-1.3.0-98daa6b-linux-amd64.tar.gz
 RUN cd /tmp && \
