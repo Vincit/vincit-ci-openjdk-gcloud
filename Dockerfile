@@ -1,4 +1,4 @@
-FROM circleci/openjdk:8-jdk
+FROM openjdk:8
 
 MAINTAINER aleksi.hakli@vincit.com
 
